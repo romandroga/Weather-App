@@ -1,0 +1,122 @@
+.forecast {
+  padding: 34px 15px 1px;
+  font-family: $font-lato;
+  color: $primary-white-color;
+  box-shadow: 0 8px 43px $primary-shadow-color;
+  border-radius: 35px;
+  background-color: $primary-background-color;
+  opacity: 0.8;
+  text-align: center;
+
+  &__days {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin-bottom: 18px;
+  }
+
+  &__city-name {
+    margin-bottom: 22px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__day-name {
+    margin-bottom: 18px;
+    opacity: 0.54;
+    font-size: 12px;
+    font-weight: 400;
+
+    &--active {
+      opacity: 1;
+      color: $primary-active-color;
+    }
+  }
+
+  &__date {
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  &__icon {
+    margin-bottom: 16px;
+  }
+
+  //   EXTREMUM
+
+  &__extremum-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__extremum {
+    &:first-of-type {
+      padding-right: 4px;
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    &:last-of-type {
+      padding-left: 4px;
+    }
+  }
+
+  &__extremum-title {
+    opacity: 0.54;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+
+  &__extremum-value {
+    color: $primary-active-color;
+    font-size: 16px;
+    font-weight: 700;
+
+    &::after {
+      content: "\00B0";
+      padding-left: 2px;
+    }
+  }
+
+  //   ARROW
+
+  &__arrow-warp {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 18px;
+    width: 58px;
+  }
+
+  &__btn {
+    padding: 10px;
+    position: relative;
+    color: $primary-white-color;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &--left::before,
+    &--right::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-left: 1px solid #fff;
+      border-top: 1px solid #fff;
+      position: absolute;
+      top: 50%;
+    }
+
+    &--left::before {
+      right: 45%;
+      transform: translate(50%, -50%) rotate(-45deg);
+    }
+
+    &--right::before {
+      left: 45%;
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+}

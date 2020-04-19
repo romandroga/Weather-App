@@ -1,0 +1,90 @@
+.forecast-info {
+  padding-bottom: 18px;
+
+  &__list {
+    padding-bottom: 20px;
+    list-style: none;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $secondary-white-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: $primary-active-color;
+    }
+  }
+
+  &__list-item {
+    padding: 20px 18px;
+    border-radius: 25px;
+    border: 1px solid $secondary-white-color;
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+  }
+
+  &__time {
+    margin-bottom: 18px;
+    opacity: 0.54;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  &__icon {
+    margin-bottom: 18px;
+  }
+
+  &__temp {
+    margin-bottom: 18px;
+    color: $primary-active-color;
+    font-size: 18px;
+    font-weight: 700;
+
+    &::after {
+      content: "\00B0";
+      padding-left: 2px;
+    }
+  }
+
+  &__details-list {
+    list-style: none;
+  }
+
+  &__details-item {
+    position: relative;
+    padding-left: 34px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: $primary-white-color;
+    }
+
+    // &--precipitation:before {
+    //   //   background-image: url(../../images/icon-wether-details-1.png);
+    // }
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.forecast-info--hidden {
+  display: none;
+}
