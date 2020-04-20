@@ -1,0 +1,159 @@
+.forecast-info {
+  padding-bottom: 18px;
+
+  &__list {
+    padding-bottom: 20px;
+    list-style: none;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+      height: 2px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $secondary-white-color;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background-color: $primary-active-color;
+    }
+  }
+
+  &__list-item {
+    padding: 20px 18px;
+    border-radius: 25px;
+    border: 1px solid $secondary-white-color;
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 7px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__time {
+    margin-bottom: 18px;
+    opacity: 0.54;
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  &__icon {
+    margin-bottom: 18px;
+  }
+
+  &__temp {
+    margin-bottom: 18px;
+    color: $primary-active-color;
+    font-size: 18px;
+    font-weight: 700;
+
+    &::after {
+      content: "\00B0";
+      padding-left: 2px;
+    }
+  }
+
+  &__details-list {
+    list-style: none;
+  }
+
+  &__details-item {
+    position: relative;
+    padding-left: 34px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      background-color: $primary-white-color;
+    }
+
+    // &--precipitation:before {
+    //   background-image: url(../../images/icon-wether-details-1.png);
+    // }
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+// MEDIA
+@media (min-width: 768px) {
+  .forecast-info {
+    position: relative;
+    padding-bottom: 80px;
+
+    &__list {
+      padding: 0;
+      white-space: nowrap;
+      overflow-x: hidden;
+    }
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &__time {
+      font-size: 14px;
+    }
+
+    &__btn {
+      display: inline-block;
+      position: absolute;
+      right: 30px;
+      bottom: 24px;
+      border-radius: 50%;
+      padding: 15px;
+      background-color: rgba(241, 241, 241, 0.2);
+      border: none;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-left: 1px solid #fff;
+        border-top: 1px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 45%;
+        transform: translate(-50%, -50%) rotate(135deg);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .forecast-info {
+    padding-bottom: 34px;
+
+    &__list-item {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &__temp {
+      font-size: 25px;
+    }
+
+    &__btn {
+      display: none;
+    }
+  }
+}

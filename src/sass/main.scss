@@ -1,10 +1,10 @@
 // HELPERS
-@import './helpers/variables.scss';
+@import "./helpers/variables.scss";
+@import "./helpers/placeholders.scss";
 
+@import "./base.scss";
 
-@import './base.scss'
-
-// COMPONENTS 
-
-
-// COMPONENTS END 
+// COMPONENTS
+@import "./components/container.scss";
+@import "./components/forecast.scss";
+@import "./components/forecast-info.scss";
