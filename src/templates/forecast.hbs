@@ -1,0 +1,18 @@
+{{#each this}}
+<li class="forecast__days-item">
+    <p class="forecast__day-name">{{dayOfWeek}}</p>
+    <p class="forecast__date">{{date}} {{month}}</p>
+    <img class="forecast__icon" src="{{icon}}" alt="icon" />
+    <div class="forecast__extremum-wrap">
+        <div class="forecast__extremum">
+            <p class="forecast__extremum-title">min</p>
+            <span class="forecast__extremum-value">{{tempMin}}</span>
+        </div>
+
+        <div class="forecast__extremum">
+            <p class="forecast__extremum-title">max</p>
+            <span class="forecast__extremum-value">{{tempMax}}</span>
+        </div>
+    </div>
+</li>
+{{/each}}
