@@ -29,9 +29,10 @@
     font-size: 14px;
     font-weight: 400;
     width: 75%;
+    outline: none;
 
     &::placeholder {
-      color: #000000;
+      color: #00000062;
       font-size: 14px;
     }
   }

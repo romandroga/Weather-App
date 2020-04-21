@@ -1,3 +1,4 @@
 import "./sass/main.scss";
 import forecast from "./js/forecast";
-import search from "./js/search";
+import searchSityPhoto from "./js/searchSityPhoto";
+import basicLightBox from "./js/basicLightBox";
