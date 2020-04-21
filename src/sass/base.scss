@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-family: $font-lato;
 }
 
 *,
@@ -18,4 +19,8 @@ img {
 
 .hidden {
   display: none;
+}
+
+body {
+  background-image: url(../images/test-background.png);
 }
