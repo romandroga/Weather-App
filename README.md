@@ -15,8 +15,8 @@
 ### Точки перелома:
 
 1. mobile - 320px - 767px;
-2. tablet - 768px - 1023px;
-3. desktop - 1024px и выше;
+2. tablet - 768px - 1119px;
+3. desktop - 1120px и выше;
 
 ### Ширина класса container:
 
