@@ -1,0 +1,109 @@
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-lato;
+  color: $primary-white-color;
+  box-shadow: 0 8px 43px $primary-shadow-color;
+  border-radius: 35px;
+  background-color: $primary-background-color;
+  padding: 38px 60px 40px;
+  position: relative;
+  margin-bottom: 32px;
+  &__icon {
+    margin-bottom: 15px;
+  }
+  &__city-name {
+    opacity: 0.3;
+    margin-bottom: 5px;
+  }
+
+  &__temperature {
+    font-size: 45px;
+    font-weight: 300;
+    padding-right: 40px;
+    &::after {
+      content: "\00B0";
+      padding-left: 6px;
+      font-size: 20px;
+      vertical-align: super;
+      font-weight: normal;
+    }
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__extremum {
+    &:first-of-type {
+      padding-right: 14px;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &:last-of-type {
+      padding-left: 14px;
+    }
+    &-wrap {
+      display: flex;
+    }
+    &-title {
+      opacity: 0.3;
+    }
+    &-value {
+      font-size: 18px;
+      &::after {
+        content: "\00B0";
+        padding-left: 2px;
+      }
+    }
+  }
+}
+
+// MEDIA
+
+@media (min-width: 768px) {
+  .current-weather {
+    margin-bottom: 47px;
+    &__city-name {
+      margin-bottom: 10px;
+    }
+    width: 490px;
+    &__temperature {
+      font-size: 90px;
+      padding-right: 0;
+      margin-bottom: 5px;
+      &::after {
+        font-size: 60px;
+        vertical-align: none;
+      }
+      &-wrapper {
+        flex-direction: column;
+      }
+    }
+    &__extremum {
+      &:first-of-type {
+        padding-right: 20px;
+      }
+
+      &:last-of-type {
+        padding-left: 20px;
+      }
+      &-title {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .current-weather {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 28px;
+  }
+}
