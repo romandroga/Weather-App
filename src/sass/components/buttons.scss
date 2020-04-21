@@ -1,0 +1,30 @@
+.button {
+  &-today {
+    @extend %button;
+  }
+  &-forecast {
+    @extend %button;
+  }
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 32px;
+    width: 280px;
+  }
+}
+
+// MEDIA
+
+@media (min-width: 768px) {
+  .button-wrapper {
+    margin-bottom: 47px;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .button-wrapper {
+    margin-right: 110px;
+    margin-left: auto;
+  }
+}

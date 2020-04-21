@@ -1,1 +1,16 @@
+%button {
+  padding: 5px 38px;
+  border-radius: 15px;
+  border: 2px solid $primary-white-color;
+  background-color: $primary-white-color;
+  opacity: 0.54;
+  color: #000;
+  font-family: $font-lato;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
 
+  &:hover {
+    opacity: 1;
+  }
+}
