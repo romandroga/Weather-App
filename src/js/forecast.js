@@ -13,7 +13,7 @@ const forecastFiveDays = ({ list }) => {
 
     return !isNewDay ? prev : prev.concat([a.slice(i, i + 8)]);
   }, []);
-}; 
+};
 
 const modifiedForecastFiveDay = (arr) => {
   return arr.map((el) => {
