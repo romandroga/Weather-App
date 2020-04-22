@@ -12,19 +12,19 @@
   <!-- Секция Ивана начало -->
   <!-- SECTION START SEARCH  -->
   <section class="search-location container">
-    <form class="search-wrap  js-form">
+    <form class="search-location__form  js-form">
       <input type="text" name="query" placeholder="Enter the city">
-      <button type="button" class="favorites-btn inactive-btn"></button>
+      <button type="button" class="search-location__form-btn" id="js-btnAdd"></button>
     </form>
-    <div class="slider-favorites">
-      <button class="slider-prev"></button>
-      <ul class="sities-list">
-        <li class="sity-item">
-          <p class="sity-name">Kyiv</p>
-          <button type="button" class="deleteBtn"></button>
+    <div class="search-location__slider">
+      <button class="search-location__slider-btnPrev"></button>
+      <ul class="search-location__slider-list js-slider-list">
+        <li class="search-location__slider-sityItem js-sityItem">
+          <p class="search-location__slider-sityName">Kyiv</p>
+          <button type="button" class="search-location__slider-btnRemove" id="js-btnRemove"></button>
         </li>
       </ul>
-      <button class="slider-next"></button>
+      <button class="search-location__slider-btnNext js-btnNext"></button>
     </div>
   </section>
 

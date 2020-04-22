@@ -12,9 +12,7 @@ function setBodyBackground(url) {
 function axiosSity() {
   OpenGalleryImg.axiosSity().then((res) => {
     const randomSity = Math.floor(Math.random() * res.length);
-    console.log(randomSity);
     const SityPhoto = res[randomSity].largeImageURL;
-    console.log(SityPhoto);
     setBodyBackground(SityPhoto);
   });
 }
@@ -24,6 +22,7 @@ const handleInput = (e) => {
   const inputValue = refs.inputForm.elements.query.value;
   OpenGalleryImg.searchQuery = inputValue;
   axiosSity();
+  refs.inputForm.reset()
 };
 
 refs.inputForm.addEventListener("submit", handleInput);

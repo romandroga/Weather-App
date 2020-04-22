@@ -1,102 +1,100 @@
 .search-location {
   margin-bottom: 50px;
-}
 
-.search-wrap {
-  background-color: $primary-white-color;
-  padding: 14px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 30px;
-  border: 1px solid #ffffff;
-  margin-top: 30px;
-  margin-bottom: 14px;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    background: url(../images/icon_location.png) no-repeat center;
-    background-size: contain;
-    width: 22px;
-    height: 22px;
-    margin-right: 12px;
-  }
-
-  input {
-    border: none;
-    color: #000000;
-    font-size: 14px;
-    font-weight: 400;
-    width: 75%;
-    outline: none;
-
-    &::placeholder {
-      color: #00000062;
-      font-size: 14px;
-    }
-  }
-
-  .favorites-btn {
-    background-color: #fff;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 19px 21px;
-    border: none;
-    width: 30px;
-    height: 30px;
-    outline: none;
-    border-radius: 50%;
-
-    &:hover {
-      background-color: #f1f1f1;
-    }
-  }
-
-  .activ-bnt {
-    background-image: url(../images/star-solid.svg);
-  }
-
-  .inactive-btn {
-    background-image: url(../images/star-regular.svg);
-  }
-}
-
-.slider-favorites {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  .slider-prev,
-  .slider-next {
-    width: 27px;
-    height: 27px;
-    background-color: rgba(241, 241, 241, 0.205);
-    border-radius: 50%;
-    border: none;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 6px 10px;
-  }
-
-  .slider-next {
-    background-image: url(../images/chevron-right-solid.svg);
-  }
-
-  .slider-prev {
-    background-image: url(../images/chevron-left-solid.svg);
-    opacity: 0;
-  }
-
-  .sities-list {
+  &__form {
+    background-color: $primary-white-color;
+    padding: 14px 24px;
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+    margin-top: 30px;
+    margin-bottom: 14px;
 
-    .sity-item {
+    &::before {
+      content: "";
+      display: inline-block;
+      background: url(../images/icon_location.png) no-repeat center;
+      background-size: contain;
+      width: 22px;
+      height: 22px;
+      margin-right: 12px;
+    }
+
+    input {
+      border: none;
+      color: #000000;
+      font-size: 14px;
+      font-weight: 400;
+      width: 75%;
+      outline: none;
+
+      &::placeholder {
+        color: #00000062;
+        font-size: 14px;
+      }
+    }
+
+    &-btn {
+      background-color: #fff;
+      background-image: url(../images/star-regular.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 19px 21px;
+      border: none;
+      width: 30px;
+      height: 30px;
+      outline: none;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f1f1f1;
+      }
+    }
+
+    .activ-bnt {
+      background-image: url(../images/star-solid.svg);
+    }
+  }
+
+  &__slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    &-btnPrev,
+    &-btnNext {
+      width: 27px;
+      height: 27px;
+      background-color: rgba(241, 241, 241, 0.397);
+      border-radius: 50%;
+      border: none;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 6px 10px;
+      cursor: pointer;
+    }
+
+    &-btnNext {
+      background-image: url(../images/chevron-right-solid.svg);
+    }
+
+    &-btnPrev {
+      background-image: url(../images/chevron-left-solid.svg);
+      visibility: hidden;
+    }
+
+    &-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      overflow: hidden;
+    }
+    &-sityItem {
       display: flex;
       align-items: center;
       font-size: 12px;
@@ -107,21 +105,26 @@
       padding: 8px 12px;
       color: #e0e3e6;
 
-      .sity-name {
-        margin-right: 22px;
-        color: #e0e3e6;
+      &:not(:last-child){
+        margin-right: 10px;
       }
+    }
+    &-sityName {
+      margin-right: 22px;
+      color: #e0e3e6;
+      cursor: pointer;
+    }
 
-      .deleteBtn {
-        width: 12px;
-        height: 12px;
-        background-color: transparent;
-        background-image: url(../images/close.svg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        border: none;
-      }
+    &-btnRemove {
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      background-image: url(../images/close.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border: none;
+      cursor: pointer;
     }
   }
 }
@@ -139,7 +142,7 @@
       }
     }
 
-    .sities-list {
+    .search-location__slider-list {
       width: 400px;
     }
   }
