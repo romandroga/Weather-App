@@ -7,18 +7,14 @@ import { addMarkupToPage } from "./utilities";
 
 const forecastList = document.querySelector(".forecast__days");
 
-// forecastList.addEventListener("click", function (e) {
-//   if (e.target.tagName === "LI") {
-//     console.log(1);
-//   }
-// });
-
 const forecastFiveDays = ({ list }) => {
-  return list.reduce((prev, cur, i, a) => {
-    const isNewDay = cur.dt_txt.endsWith("00:00:00");
+  const allDates = list.map((el) => getDayNumber(el.dt));
 
-    return !isNewDay ? prev : prev.concat([a.slice(i, i + 8)]);
-  }, []);
+  const uniqueDates = allDates.filter((el, i) => allDates.indexOf(el) === i);
+
+  return uniqueDates.map((day) =>
+    list.filter((el) => getDayNumber(el.dt) === day),
+  );
 };
 
 const modifiedForecastFiveDay = (arr) => {
@@ -55,6 +51,28 @@ const modifiedForecastFiveDay = (arr) => {
     return dayForecast;
   });
 };
+
+// function formatResponse(array) {
+//   const newArrayTotal = [];
+//   array.forEach((element) => {
+//     const newObj = {
+//       currentDate: new Date(element[0].dt_txt),
+//       other: element.map((el) => {
+//         const forecastObj = {
+//           date: el.dt_txt,
+//           ...el,
+//         };
+//         return forecastObj;
+//       }),
+//     };
+//     newArrayTotal.push(newObj);
+//   });
+//   return newArrayTotal;
+// }
+
+function getDayNumber(element) {
+  return new Date(element * 1000).getDate();
+}
 
 function ready() {
   OpenWeather.fetchForecast()
