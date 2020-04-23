@@ -19,10 +19,6 @@
     <div class="search-location__slider">
       <button class="search-location__slider-btnPrev"></button>
       <ul class="search-location__slider-list js-slider-list">
-        <li class="search-location__slider-sityItem js-sityItem">
-          <p class="search-location__slider-sityName">Kyiv</p>
-          <button type="button" class="search-location__slider-btnRemove" id="js-btnRemove"></button>
-        </li>
       </ul>
       <button class="search-location__slider-btnNext js-btnNext"></button>
     </div>
@@ -30,7 +26,30 @@
 
   <!-- Секция Ивана конец -->
 
+  <section class="toggle container">
+    <div class="toolbar">
+      <div class="theme-switch">
+        <span class="celsius">C &deg</span>
+        <div class="switch">
+          <input
+            class="switch__input js-switch-input"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-control"
+          />
+          <label
+            aria-hidden="true"
+            class="switch__label"
+            for="theme-switch-control"
+            >On</label
+          >
+          <div aria-hidden="true" class="switch__marker"></div>
+        </div>
+        <span class="fahrenheit">F &deg</span>
+      </div>
+    </div>
 
+  </section>
 
   <!-- Секция Романа начало  -->
 <section class="current-weather container">
