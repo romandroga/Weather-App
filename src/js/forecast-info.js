@@ -1,5 +1,5 @@
 const forecastList = document.querySelector(".forecast__days");
-const forecastInfoList = document.querySelector(".forecast-info__list");
+const forecastInfoList = document.querySelector(".forecast-info");
 
 function toggleInfo(e) {
   const { target } = e;
