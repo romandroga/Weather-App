@@ -7,13 +7,19 @@ import { addMarkupToPage } from "./utilities";
 
 const forecastList = document.querySelector(".forecast__days");
 
+// forecastList.addEventListener("click", function (e) {
+//   if (e.target.tagName === "LI") {
+//     console.log(1);
+//   }
+// });
+
 const forecastFiveDays = ({ list }) => {
   return list.reduce((prev, cur, i, a) => {
     const isNewDay = cur.dt_txt.endsWith("00:00:00");
 
     return !isNewDay ? prev : prev.concat([a.slice(i, i + 8)]);
   }, []);
-}; 
+};
 
 const modifiedForecastFiveDay = (arr) => {
   return arr.map((el) => {

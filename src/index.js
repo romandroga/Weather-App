@@ -1,2 +1,3 @@
 import "./sass/main.scss";
-import forecast from "./js/forecast";
+import "./js/forecast";
+import "./js/forecast-info";
