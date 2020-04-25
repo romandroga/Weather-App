@@ -29,7 +29,7 @@
   <section class="toggle container">
     <div class="toolbar">
       <div class="theme-switch">
-        <span class="celsius">C &deg</span>
+        <span class="celsius isActiveColor">&degC</span>
         <div class="switch">
           <input
             class="switch__input js-switch-input"
@@ -39,13 +39,13 @@
           />
           <label
             aria-hidden="true"
-            class="switch__label"
+            class="switch__label js-toggle"
             for="theme-switch-control"
             >On</label
           >
           <div aria-hidden="true" class="switch__marker"></div>
         </div>
-        <span class="fahrenheit">F &deg</span>
+        <span class="fahrenheit">&degF</span>
       </div>
     </div>
 
@@ -90,148 +90,142 @@
         <ul class="forecast__days">
         </ul>
     </div>
-
-      <div class="forecast__arrow-warp">
-        <button class="forecast__btn forecast__btn--left"></button>
-        <button class="forecast__btn forecast__btn--right"></button>
-      </div>
-
+    <div class="forecast__arrow-warp">
+      <button class="forecast__btn forecast__btn--left"></button>
+      <button class="forecast__btn forecast__btn--right"></button>
+    </div>
 <!-- SECTION START FORECAST-INFO  -->
+    <div class="forecast-info">
+      <ul class="forecast-info__list">
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
 
-<div class="forecast-info">
-  <ul class="forecast-info__list">
-    <li class="forecast-info__list-item">
-      <p class="forecast-info__time">00:00</p>
-      <img class="forecast-info__icon" src="#" alt="icon" />
-      <p class="forecast-info__temp">-3</p>
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
 
-      <ul class="forecast-info__details-list">
-        <li class="forecast-info__details-item forecast-info__details--precipitation">
-          <p class="forecast-info__value">772 mm</p>
         </li>
-        <li class="forecast-info__details-item forecast-info__details--humidity">
-          <p class="forecast-info__value">54%</p>
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
+
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
+
         </li>
-        <li class="forecast-info__details-item forecast-info__details--wind">
-          <p class="forecast-info__value">3.7 m/s</p>
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
+
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
+
+        </li>
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
+
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
+
+        </li>
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
+
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
+
+        </li>
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
+
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
+
+        </li>
+        <li class="forecast-info__list-item">
+          <p class="forecast-info__time">00:00</p>
+          <img class="forecast-info__icon" src="#" alt="icon" />
+          <p class="forecast-info__temp">-3</p>
+
+          <ul class="forecast-info__details-list">
+            <li class="forecast-info__details-item forecast-info__details--precipitation">
+              <p class="forecast-info__value">772 mm</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--humidity">
+              <p class="forecast-info__value">54%</p>
+            </li>
+            <li class="forecast-info__details-item forecast-info__details--wind">
+              <p class="forecast-info__value">3.7 m/s</p>
+            </li>
+          </ul>
+
         </li>
       </ul>
-
-    </li>
-    <li class="forecast-info__list-item">
-      <p class="forecast-info__time">00:00</p>
-      <img class="forecast-info__icon" src="#" alt="icon" />
-      <p class="forecast-info__temp">-3</p>
-
-      <ul class="forecast-info__details-list">
-        <li class="forecast-info__details-item forecast-info__details--precipitation">
-          <p class="forecast-info__value">772 mm</p>
-        </li>
-        <li class="forecast-info__details-item forecast-info__details--humidity">
-          <p class="forecast-info__value">54%</p>
-        </li>
-        <li class="forecast-info__details-item forecast-info__details--wind">
-          <p class="forecast-info__value">3.7 m/s</p>
-        </li>
-      </ul>
-
-    </li>
-    <li class="forecast-info__list-item">
-      <p class="forecast-info__time">00:00</p>
-      <img class="forecast-info__icon" src="#" alt="icon" />
-      <p class="forecast-info__temp">-3</p>
-
-      <ul class="forecast-info__details-list">
-        <li class="forecast-info__details-item forecast-info__details--precipitation">
-          <p class="forecast-info__value">772 mm</p>
-        </li>
-        <li class="forecast-info__details-item forecast-info__details--humidity">
-          <p class="forecast-info__value">54%</p>
-        </li>
-        <li class="forecast-info__details-item forecast-info__details--wind">
-          <p class="forecast-info__value">3.7 m/s</p>
-        </li>
-      </ul>
-
-    </li>
-
-  </li>
-  <li class="forecast-info__list-item">
-    <p class="forecast-info__time">00:00</p>
-    <img class="forecast-info__icon" src="#" alt="icon" />
-    <p class="forecast-info__temp">-3</p>
-
-    <ul class="forecast-info__details-list">
-      <li class="forecast-info__details-item forecast-info__details--precipitation">
-        <p class="forecast-info__value">772 mm</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--humidity">
-        <p class="forecast-info__value">54%</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--wind">
-        <p class="forecast-info__value">3.7 m/s</p>
-      </li>
-    </ul>
-
-  </li>
-  <li class="forecast-info__list-item">
-    <p class="forecast-info__time">00:00</p>
-    <img class="forecast-info__icon" src="#" alt="icon" />
-    <p class="forecast-info__temp">-3</p>
-
-    <ul class="forecast-info__details-list">
-      <li class="forecast-info__details-item forecast-info__details--precipitation">
-        <p class="forecast-info__value">772 mm</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--humidity">
-        <p class="forecast-info__value">54%</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--wind">
-        <p class="forecast-info__value">3.7 m/s</p>
-      </li>
-    </ul>
-
-  </li>
-  <li class="forecast-info__list-item">
-    <p class="forecast-info__time">00:00</p>
-    <img class="forecast-info__icon" src="#" alt="icon" />
-    <p class="forecast-info__temp">-3</p>
-
-    <ul class="forecast-info__details-list">
-      <li class="forecast-info__details-item forecast-info__details--precipitation">
-        <p class="forecast-info__value">772 mm</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--humidity">
-        <p class="forecast-info__value">54%</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--wind">
-        <p class="forecast-info__value">3.7 m/s</p>
-      </li>
-    </ul>
-
-  </li>
-  <li class="forecast-info__list-item">
-    <p class="forecast-info__time">00:00</p>
-    <img class="forecast-info__icon" src="#" alt="icon" />
-    <p class="forecast-info__temp">-3</p>
-
-    <ul class="forecast-info__details-list">
-      <li class="forecast-info__details-item forecast-info__details--precipitation">
-        <p class="forecast-info__value">772 mm</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--humidity">
-        <p class="forecast-info__value">54%</p>
-      </li>
-      <li class="forecast-info__details-item forecast-info__details--wind">
-        <p class="forecast-info__value">3.7 m/s</p>
-      </li>
-    </ul>
-
-  </li>
-    </ul>
-    <button class="forecast-info__btn hidden"></button>
-</div>
-
+        <button class="forecast-info__btn hidden"></button>
+    </div>
 <!-- SECTION END FORECAST-INFO  -->
   </div>
 </section>

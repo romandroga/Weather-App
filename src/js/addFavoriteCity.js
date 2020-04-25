@@ -1,51 +1,43 @@
-import OpenGalleryImg from "../API/OpenGalleryImg";
 import cityItemTempl from "../templates/cityItem.hbs";
 
-export const addButton = document.querySelector("#js-btnAdd");
-const listSities = document.querySelector(".js-slider-list");
+import OpenGalleryImg from "../API/OpenGalleryImg";
+import OpenWeather from "../API/OpenWeather";
+import { setLocalStorageCity } from "./utilities";
+import { ready, axiosCityImg } from "./pageLoad";
+
+export const addToFavorites = document.querySelector("#js-btnAdd");
 export const btnNext = document.querySelector(".js-btnNext");
+const listSities = document.querySelector(".js-slider-list");
 
-if (!listSities.children.length) {
-  btnNext.style.visibility = "hidden";
-}
-
-addButton.addEventListener("click", handlerClickButton);
+document.addEventListener("DOMContentLoaded", () => {
+  if (!listSities.childElementCount) {
+    btnNext.style.visibility = "hidden";
+  }
+});
 
 const cities = JSON.parse(localStorage.getItem("cities"));
+if (cities !== null) {
+  cities.forEach((city) =>
+    listSities.insertAdjacentHTML("beforeend", cityItemTempl(city)),
+  );
+  // Нужно придумать что будет при первой закгрузке, если пока нет избранных городов?!?!?!?!
+  OpenWeather.querry = cities[0];
+  OpenGalleryImg.searchQuery = cities[0];
+  ready();
+  axiosCityImg();
+  addToFavorites.classList.add("activ-bnt");
+  addToFavorites.disabled = true;
+}
 
-cities.forEach((city) =>
-  listSities.insertAdjacentHTML("beforeend", cityItemTempl(city)),
-);
+addToFavorites.addEventListener("click", handlerClickButton);
 
 function handlerClickButton(e) {
-  console.dir(e.target);
-  if (OpenGalleryImg.searchQuery) {
-    const city =
-      OpenGalleryImg.searchQuery[0].toUpperCase() +
-      OpenGalleryImg.searchQuery.slice(1);
+  const city = OpenGalleryImg.searchQuery;
+  if (city) {
     setLocalStorageCity(city);
-    const markup = cityItemTempl(city);
-    listSities.insertAdjacentHTML("beforeend", markup);
-    addButton.classList.add("activ-bnt");
-    addButton.disabled = true;
-    addButton.classList.remove("inactiv-bnt");
+    addToFavorites.classList.add("activ-bnt");
+    addToFavorites.disabled = true;
+    addToFavorites.classList.remove("inactiv-bnt");
     btnNext.style.visibility = "visible";
   }
-}
-
-function setLocalStorageCity(city) {
-  const cities = JSON.parse(localStorage.getItem("cities"));
-  console.log(cities);
-  localStorage.setItem(
-    "cities",
-    JSON.stringify(!cities ? [city] : [...cities, city]),
-  );
-}
-
-export function removeLocalStorageCity(city) {
-  const cities = JSON.parse(localStorage.getItem("cities"));
-  localStorage.setItem(
-    "cities",
-    JSON.stringify(cities.filter((value) => value !== city)),
-  );
 }

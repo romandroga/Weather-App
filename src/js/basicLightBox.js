@@ -2,7 +2,7 @@ import "basiclightbox/dist/basicLightbox.min.css";
 import * as basicLightbox from "basiclightbox";
 import { btnNext } from "./addFavoriteCity";
 import markupModal from "../templates/modal.hbs";
-import { removeLocalStorageCity } from "./addFavoriteCity";
+import { removeLocalStorageCity } from "./utilities";
 
 const deleteCity = document.querySelector(".js-slider-list");
 
@@ -13,7 +13,6 @@ function isOpenModalHandle(e) {
   const closeBtn = e.target;
   const elItemCity = closeBtn.parentElement;
   const cityName = closeBtn.previousElementSibling;
-  console.dir(cityName);
   if (closeBtn.id === "js-btnRemove") {
     const showModal = basicLightbox.create(`${markupModal()}`);
     showModal.show();
