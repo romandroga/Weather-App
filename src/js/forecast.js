@@ -1,22 +1,21 @@
 import moment from "moment";
 
-import OpenWeather from "../API/OpenWeather";
-import getForecastMarkup from "../templates/forecast.hbs";
-import getForecastInfoMarkup from "../templates/forecast.hbs";
-import { addMarkupToPage } from "./utilities";
+import { getDayNumber } from "./utilities";
 
-const forecastList = document.querySelector(".forecast__days");
+const forecast = ({ list }) => {
+  const allDates = list.map((el) => getDayNumber(el.dt));
 
-const forecastFiveDays = ({ list }) => {
-  return list.reduce((prev, cur, i, a) => {
-    const isNewDay = cur.dt_txt.endsWith("00:00:00");
+  const uniqueDates = allDates.filter((el, i) => allDates.indexOf(el) === i);
 
-    return !isNewDay ? prev : prev.concat([a.slice(i, i + 8)]);
-  }, []);
+  return uniqueDates.map((date) => {
+    return list.filter((el) => {
+      return getDayNumber(el.dt) === date;
+    });
+  });
 };
 
-const modifiedForecastFiveDay = (arr) => {
-  return arr.map((el) => {
+const modifyResponse = (arr) => {
+  return arr.map((day) => {
     const dayForecast = {
       dayOfWeek: "",
       date: "",
@@ -26,20 +25,21 @@ const modifiedForecastFiveDay = (arr) => {
       icon: "",
     };
 
-    el.forEach((day) => {
-      dayForecast.tempMin.push(day.main.temp_min);
-      dayForecast.tempMax.push(day.main.temp_max);
+    day.forEach((el) => {
+      const forecastDate = moment(el.dt_txt);
+      const date = forecastDate.date();
+      const dayOfWeek = forecastDate.format("dddd");
+      const month = forecastDate.format("MMM");
 
-      if (day.dt_txt.endsWith("15:00:00")) {
-        const forecastDate = moment(day.dt_txt);
-        const date = forecastDate.date();
-        const dayOfWeek = forecastDate.format("dddd");
-        const month = forecastDate.format("MMM");
+      dayForecast.dayOfWeek = dayOfWeek;
+      dayForecast.date = date;
+      dayForecast.month = month;
 
-        dayForecast.icon = `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`;
-        dayForecast.dayOfWeek = dayOfWeek;
-        dayForecast.date = date;
-        dayForecast.month = month;
+      dayForecast.tempMin.push(el.main.temp_min);
+      dayForecast.tempMax.push(el.main.temp_max);
+
+      if (el.dt_txt.endsWith("15:00:00")) {
+        dayForecast.icon = `http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`;
       }
     });
 
@@ -50,17 +50,4 @@ const modifiedForecastFiveDay = (arr) => {
   });
 };
 
-function ready() {
-  OpenWeather.fetchForecast()
-    .then((cityWeather) => cityWeather)
-    .then(forecastFiveDays)
-    .then(modifiedForecastFiveDay)
-    .then((arr) => {
-      const murkup = getForecastMarkup(arr);
-
-      addMarkupToPage(murkup, forecastList);
-    })
-    .catch(console.error);
-}
-
-document.addEventListener("DOMContentLoaded", ready);
+export { forecast, modifyResponse };
