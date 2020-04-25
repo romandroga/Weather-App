@@ -10,6 +10,23 @@
     rel="stylesheet">
 <body>
   <!-- Секция Ивана начало -->
+  <!-- SECTION START SEARCH  -->
+  <section class="search-location container">
+    <form class="search-location__form  js-form">
+      <input type="text" name="query" placeholder="Enter the city">
+      <button type="button" class="search-location__form-btn" id="js-btnAdd"></button>
+    </form>
+    <div class="search-location__slider">
+      <button class="search-location__slider-btnPrev"></button>
+      <ul class="search-location__slider-list js-slider-list">
+        <li class="search-location__slider-sityItem js-sityItem">
+          <p class="search-location__slider-sityName">Kyiv</p>
+          <button type="button" class="search-location__slider-btnRemove" id="js-btnRemove"></button>
+        </li>
+      </ul>
+      <button class="search-location__slider-btnNext js-btnNext"></button>
+    </div>
+  </section>
 
   <!-- Секция Ивана конец -->
 
@@ -50,8 +67,10 @@
   <h2 class="city-name">Сity name, CN</h2>
   <div class="forecast">
     <h2 class="forecast__city-name">Сity name, CN</h2>
-    <ul class="forecast__days">
-      </ul>
+    <div class="carousel">
+        <ul class="forecast__days">
+        </ul>
+    </div>
 
       <div class="forecast__arrow-warp">
         <button class="forecast__btn forecast__btn--left"></button>
@@ -190,8 +209,6 @@
     </ul>
 
   </li>
-  
-    
     </ul>
     <button class="forecast-info__btn hidden"></button>
 </div>
@@ -205,8 +222,6 @@
 
 
   <!-- Секция Олега конец  -->
-
-
 
   <!-- Секция Игоря начало  -->
   <section class="date-info container">
