@@ -8,4 +8,5 @@ import "./js/forecast";
 import "./js/forecast-info";
 import "./js/downloadFavoriteCity";
 import "./js/toggleTemperature";
+import "./js/siemaFavoritesCities";
 

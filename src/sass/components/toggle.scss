@@ -79,8 +79,17 @@
   will-change: left;
 }
 
+.celsius,
+.fahrenheit {
+  padding: 1px 3px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
 .isActiveColor {
-  color: #ff6b08
+  color: #ff6b08;
+  border-color: #ff6b08;
+  transition: all 0.3s linear;
 }
 
 @media (min-width: 768px) {
