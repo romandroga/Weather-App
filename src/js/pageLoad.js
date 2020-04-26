@@ -53,5 +53,3 @@ export function axiosCityImg() {
     })
     .catch(console.error);
 }
-
-document.addEventListener("DOMContentLoaded", ready);
