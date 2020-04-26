@@ -12,7 +12,7 @@ const handleInput = (e) => {
   OpenGalleryImg.searchQuery = inputValue;
   OpenWeather.querry = inputValue;
   ready();
-  axiosCityImg();
+  OpenWeather.fetchForecast().then((forecast) => axiosCityImg());
   inputForm.reset();
   const cities = JSON.parse(localStorage.getItem("cities"));
   if (cities !== null) {

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const cities = JSON.parse(localStorage.getItem("cities"));
-if (cities !== null) {
+if (cities !== null && cities.length !== 0) {
   cities.forEach((city) =>
     listSities.insertAdjacentHTML("beforeend", cityItemTempl(city)),
   );
@@ -24,7 +24,7 @@ if (cities !== null) {
   OpenWeather.querry = cities[0];
   OpenGalleryImg.searchQuery = cities[0];
   ready();
-  axiosCityImg();
+  OpenWeather.fetchForecast().then((forecast) => axiosCityImg());
   addToFavorites.classList.add("activ-bnt");
   addToFavorites.disabled = true;
 }
