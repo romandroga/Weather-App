@@ -79,14 +79,23 @@
       display: inline-block;
       position: absolute;
       left: 0;
-      width: 20px;
-      height: 20px;
-      background-color: $primary-white-color;
     }
 
-    // &--precipitation:before {
-    //   background-image: url(../../images/icon-wether-details-1.png);
-    // }
+    &--precipitation:before {
+      background: url(../images/icon-wether-details-1.png);
+      width: 22px;
+      height: 20px;
+    }
+    &--humidity:before {
+      background: url(../images/icon-wether-details-2.png);
+      width: 13px;
+      height: 20px;
+    }
+    &--wind:before {
+      background: url(../images/icon-wether-details-3.png);
+      width: 24px;
+      height: 20px;
+    }
 
     &:not(:last-of-type) {
       margin-bottom: 10px;
