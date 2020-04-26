@@ -1,11 +1,7 @@
 import moment from "moment";
 
-const forecastList = document.querySelector(".forecast__days");
-const forecastInfoList = document.querySelector(".forecast-info");
-
 const modify = (arr) => {
-  const clone = [...arr];
-  return clone.map((el) => {
+  return arr.map((el) => {
     return {
       time: moment(el.dt * 1000).format("LT"),
       temp: Math.round(el.main.temp),
