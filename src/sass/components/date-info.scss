@@ -1,0 +1,192 @@
+.daily {
+  font-family: $font-lato;
+  color: $primary-white-color;
+}
+
+.date-info {
+  margin: 0 auto;
+  box-shadow: 0 8px 43px rgba(16, 33, 54, 0.6);
+  border-radius: 35px;
+  background-color: rgba(16, 33, 54, 0.6);
+  padding: 30px 0 40px;
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 44px;
+  &__day {
+    &-wrapper {
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      width: 118px;
+    }
+    &-now {
+      font-size: 45px;
+      &::after {
+        content: "Th";
+        font-size: 14px;
+        vertical-align: top;
+      }
+    }
+    &-week {
+      font-size: 45px;
+    }
+  }
+  &__time {
+    &-wrapper {
+      margin: 0 auto;
+      font-weight: 400;
+      display: flex;
+      justify-content: space-between;
+      width: 134px;
+      margin-bottom: 12px;
+    }
+    &-month {
+      padding-right: 11px;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    &-hour {
+      padding-left: 8px;
+    }
+  }
+
+  &__sun {
+    font-weight: 400;
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+      width: 162px;
+    }
+    &-sunrise {
+      display: flex;
+      align-items: baseline;
+      padding-right: 9px;
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    &-icon {
+      margin-right: 10px;
+    }
+    &-sunset {
+      display: flex;
+      align-items: baseline;
+      padding-left: 9px;
+    }
+    &-time {
+      font-weight: 400;
+    }
+  }
+}
+
+.quote {
+  text-align: -webkit-right;
+  &__text {
+    font-style: italic;
+    width: 200px;
+    margin-bottom: 16px;
+  }
+  &__author {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .daily {
+    width: 490px;
+    font-size: 18px;
+  }
+  .date-info {
+    margin-bottom: 64px;
+    &__day-now {
+      font-size: 90px;
+      &::after {
+        font-size: 23px;
+      }
+    }
+    &__day-week {
+      font-size: 90px;
+    }
+    &__day-wrapper {
+      width: 204px;
+    }
+    &__time {
+      &-wrapper {
+        width: 200px;
+        margin-bottom: 28px;
+      }
+      &-month {
+        font-size: 18px;
+        padding-right: 27px;
+      }
+      &-hour {
+        font-size: 18px;
+      }
+    }
+
+    &__sun {
+      &-wrapper {
+        width: 192px;
+      }
+      &-sunrise {
+        padding-right: 15px;
+      }
+      &-time {
+        font-size: 18px;
+      }
+    }
+  }
+  .quote {
+    padding-right: 20px;
+    &__text {
+      width: 350px;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .daily {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .date-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 600px;
+    margin-left: 0;
+    margin-right: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-left: 8%;
+    margin-bottom: 0;
+    &__day-wrapper {
+      margin: 0;
+    }
+    &__value {
+      display: flex;
+      align-items: baseline;
+    }
+    &__time {
+      &-wrapper {
+        width: 175px;
+        margin-right: 30px;
+      }
+      &-month {
+        font-size: 18px;
+        padding-right: 15px;
+      }
+      &-hour {
+        font-size: 18px;
+      }
+    }
+  }
+  .quote {
+    margin-right: 5%;
+    &__text {
+      font-size: 22px;
+    }
+  }
+}
