@@ -10,7 +10,7 @@ function clickFavoriteCityName(e) {
   if (e.target.nodeName === "P") {
     const cityName = e.target.innerText;
     OpenGalleryImg.searchQuery = cityName;
-    OpenWeather.querry = cityName;
+    OpenWeather.query = cityName;
     ready();
     renderCurrentWeather();
     axiosCityImg();
