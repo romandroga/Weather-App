@@ -3,6 +3,7 @@ import { addToFavorites } from "./addFavoriteCity";
 import OpenWeather from "../API/OpenWeather";
 import { ready, axiosCityImg } from "./pageLoad";
 import { toLowCaseCity } from "./utilities";
+import { renderCurrentWeather } from "./currentWeather";
 
 export const inputForm = document.querySelector(".js-form");
 
@@ -12,6 +13,7 @@ const handleInput = (e) => {
   OpenGalleryImg.searchQuery = inputValue;
   OpenWeather.query = inputValue;
   ready();
+  renderCurrentWeather();
   axiosCityImg();
   inputForm.reset();
   const cities = JSON.parse(localStorage.getItem("cities"));

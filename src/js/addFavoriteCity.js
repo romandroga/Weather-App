@@ -4,7 +4,7 @@ import OpenGalleryImg from "../API/OpenGalleryImg";
 import OpenWeather from "../API/OpenWeather";
 import { setLocalStorageCity } from "./utilities";
 import { ready, axiosCityImg } from "./pageLoad";
-
+import { renderCurrentWeather } from "./currentWeather";
 export const addToFavorites = document.querySelector("#js-btnAdd");
 export const btnNext = document.querySelector(".js-btnNext");
 const listSities = document.querySelector(".js-slider-list");
@@ -25,6 +25,7 @@ if (cities !== null) {
   OpenGalleryImg.searchQuery = cities[0];
   ready();
   axiosCityImg();
+  renderCurrentWeather();
   addToFavorites.classList.add("activ-bnt");
   addToFavorites.disabled = true;
 }

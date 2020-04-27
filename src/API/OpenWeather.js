@@ -11,6 +11,24 @@ export default {
     const { data } = await axios.get(queryString);
     return data;
   },
+  async fetchForecastByGeolocation(){
+    const queryString = `${this.endpoint}/data/2.5/forecast?lat=${geolocation.latitude}&lon=${geolocation.longitude}&appid=${this.apiKey}&${this._temperatureUnit}`;
+    const { data } = await axios.get(queryString);
+    return data;
+  },
+  async fetchCurrentWeather() {
+    const queryString = `${this.endpoint}/data/2.5/weather?q=${this._querry}&appid=${this.apiKey}&${this._temperatureUnit}`;
+    const { data } = await axios.get(queryString);
+    return data;
+  },
+  async fetchCurrentWeatherByGeolocation() {
+    const queryString = `${this.endpoint}/data/2.5/weather?lat=${geolocation.latitude}&lon=${geolocation.longitude}&appid=${this.apiKey}&${this._temperatureUnit}`;
+    const { data } = await axios.get(queryString);
+    return data;
+  },
+
+  //Чтобы пользоваться запросвми по геолокации,нужно в области видимости этих запросов
+  //стянуть с localstorage "geolocation" => const geolocation = JSON.parse(localStorage.getItem("geolocation"));
 
   get temperatureUnit() {
     return this._temperatureUnit;
