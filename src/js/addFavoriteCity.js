@@ -30,7 +30,7 @@ if (cities !== null && cities.length !== 0) {
 addToFavorites.addEventListener("click", handlerClickButton);
 
 function handlerClickButton() {
-  const city = OpenGalleryImg.searchQuery;
+  const city = OpenWeather.querry;
   if (city) {
     setLocalStorageCity(city);
     addToFavorites.classList.add("activ-bnt");

@@ -1,4 +1,5 @@
 import Siema from "siema";
+import { listCities } from "./utilities";
 
 const slider = new Siema({
   perPage: {
@@ -18,4 +19,11 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 document.querySelector(".prev").addEventListener("click", () => {
   slider.prev();
+});
+
+const append = document.querySelector(".append");
+
+append.addEventListener("click", () => {
+  const lastNewElement = listCities.children[listCities.children.length - 1];
+  slider.append(lastNewElement);
 });

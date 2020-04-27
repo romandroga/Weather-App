@@ -21,7 +21,7 @@ export default {
   },
 
   get querry() {
-    this._querry;
+    return this._querry;
   },
 
   set querry(value) {

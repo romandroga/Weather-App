@@ -25,6 +25,7 @@ function isOpenModalHandle(e) {
         elItemCity.remove();
         removeLocalStorageCity(cityName.innerText);
         showModal.close();
+        location.reload()
       } else if (e.target.className === "confirm-btn-no") {
         showModal.close();
       }
