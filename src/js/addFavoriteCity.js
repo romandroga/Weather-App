@@ -21,7 +21,7 @@ if (cities !== null) {
     listSities.insertAdjacentHTML("beforeend", cityItemTempl(city)),
   );
   // Нужно придумать что будет при первой закгрузке, если пока нет избранных городов?!?!?!?!
-  OpenWeather.querry = cities[0];
+  OpenWeather.query = cities[0];
   OpenGalleryImg.searchQuery = cities[0];
   ready();
   axiosCityImg();

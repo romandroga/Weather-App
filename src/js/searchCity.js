@@ -10,7 +10,7 @@ const handleInput = (e) => {
   e.preventDefault();
   const inputValue = toLowCaseCity(inputForm.elements.query.value);
   OpenGalleryImg.searchQuery = inputValue;
-  OpenWeather.querry = inputValue;
+  OpenWeather.query = inputValue;
   ready();
   axiosCityImg();
   inputForm.reset();
