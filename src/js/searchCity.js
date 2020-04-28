@@ -4,7 +4,7 @@ import OpenWeather from "../API/OpenWeather";
 import { ready, axiosCityImg } from "./pageLoad";
 import { toLowCaseCity } from "./utilities";
 import { renderCurrentWeather } from "./currentWeather";
-import {renderRandomQuote} from "./quote"
+import { renderRandomQuote } from "./quote";
 
 export const inputForm = document.querySelector(".js-form");
 

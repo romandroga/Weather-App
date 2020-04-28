@@ -194,6 +194,9 @@
 }
 
 @media screen and (min-width: 1120px) {
+  .forecast-wrap {
+    margin-bottom: 74px;
+  }
   .forecast {
     &__days {
       padding: 0 116px;
