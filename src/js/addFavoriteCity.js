@@ -4,7 +4,8 @@ import OpenGalleryImg from "../API/OpenGalleryImg";
 import OpenWeather from "../API/OpenWeather";
 import { setLocalStorageCity } from "./utilities";
 import { ready, axiosCityImg } from "./pageLoad";
-
+import { renderCurrentWeather } from "./currentWeather";
+import { renderRandomQuote } from "./quote";
 export const addToFavorites = document.querySelector("#js-btnAdd");
 export const btnNext = document.querySelector(".js-btnNext");
 export const btnPrev = document.querySelector(".js-btnPrev");
@@ -15,11 +16,13 @@ if (cities !== null && cities.length !== 0) {
   cities.forEach((city) =>
     listSities.insertAdjacentHTML("beforeend", cityItemTempl(city)),
   );
-  // Нужно придумать что будет при первой закгрузке, если пока нет избранных городов?!?!?!?!
-  OpenWeather.querry = cities[0];
+  OpenWeather.query = cities[0];
   OpenGalleryImg.searchQuery = cities[0];
   ready();
   OpenWeather.fetchForecast().then((forecast) => axiosCityImg());
+  renderCurrentWeather();
+  renderRandomQuote();
+
   addToFavorites.classList.add("activ-bnt");
   addToFavorites.disabled = true;
 } else {
@@ -27,10 +30,20 @@ if (cities !== null && cities.length !== 0) {
   btnPrev.style.visibility = "hidden";
 }
 
+if (cities === null || cities.length === 0) {
+  OpenWeather.query = "Kyiv";
+  OpenGalleryImg.searchQuery = "Kyiv";
+  ready();
+  OpenWeather.fetchForecast().then((forecast) => axiosCityImg());
+  renderCurrentWeather();
+  renderRandomQuote();
+}
+
 addToFavorites.addEventListener("click", handlerClickButton);
 
 function handlerClickButton() {
-  const city = OpenWeather.querry;
+  const city = OpenGalleryImg.query;
+  console.log(city);
   if (city) {
     setLocalStorageCity(city);
     addToFavorites.classList.add("activ-bnt");
