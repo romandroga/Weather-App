@@ -11,13 +11,13 @@ export default {
     const { data } = await axios.get(queryString);
     return data;
   },
-  async fetchForecastByGeolocation(){
+  async fetchForecastByGeolocation() {
     const queryString = `${this.endpoint}/data/2.5/forecast?lat=${geolocation.latitude}&lon=${geolocation.longitude}&appid=${this.apiKey}&${this._temperatureUnit}`;
     const { data } = await axios.get(queryString);
     return data;
   },
   async fetchCurrentWeather() {
-    const queryString = `${this.endpoint}/data/2.5/weather?q=${this._querry}&appid=${this.apiKey}&${this._temperatureUnit}`;
+    const queryString = `${this.endpoint}/data/2.5/weather?q=${this._query}&appid=${this.apiKey}&${this._temperatureUnit}`;
     const { data } = await axios.get(queryString);
     return data;
   },
