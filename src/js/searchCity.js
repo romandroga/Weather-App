@@ -4,6 +4,7 @@ import OpenWeather from "../API/OpenWeather";
 import { ready, axiosCityImg } from "./pageLoad";
 import { toLowCaseCity } from "./utilities";
 import { renderCurrentWeather } from "./currentWeather";
+import {renderRandomQuote} from "./quote"
 
 export const inputForm = document.querySelector(".js-form");
 
@@ -15,6 +16,7 @@ const handleInput = (e) => {
   ready();
   renderCurrentWeather();
   axiosCityImg();
+  renderRandomQuote();
   inputForm.reset();
   const cities = JSON.parse(localStorage.getItem("cities"));
   if (cities !== null) {
