@@ -5,6 +5,7 @@ import OpenWeather from "../API/OpenWeather";
 import { setLocalStorageCity } from "./utilities";
 import { ready, axiosCityImg } from "./pageLoad";
 import { renderCurrentWeather } from "./currentWeather";
+import {renderRandomQuote} from "./quote"
 export const addToFavorites = document.querySelector("#js-btnAdd");
 export const btnNext = document.querySelector(".js-btnNext");
 const listSities = document.querySelector(".js-slider-list");
@@ -26,8 +27,18 @@ if (cities !== null) {
   ready();
   axiosCityImg();
   renderCurrentWeather();
+  renderRandomQuote();
   addToFavorites.classList.add("activ-bnt");
   addToFavorites.disabled = true;
+}
+//Добавил загрузку по умолчанию погоды и фона Киева
+if (!! cities) {
+  OpenWeather.query = "Kyiv";
+  OpenGalleryImg.searchQuery = "Kyiv";
+  ready();
+  axiosCityImg();
+  renderCurrentWeather();
+  renderRandomQuote();
 }
 
 addToFavorites.addEventListener("click", handlerClickButton);

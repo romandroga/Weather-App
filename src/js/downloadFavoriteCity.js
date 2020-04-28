@@ -3,6 +3,7 @@ import OpenGalleryImg from "../API/OpenGalleryImg";
 import { ready, axiosCityImg } from "./pageLoad";
 import { addToFavorites } from "./addFavoriteCity";
 import { renderCurrentWeather } from "./currentWeather";
+import {renderRandomQuote} from "./quote";
 
 const favoriteList = document.querySelector(".js-slider-list");
 
@@ -14,6 +15,7 @@ function clickFavoriteCityName(e) {
     ready();
     renderCurrentWeather();
     axiosCityImg();
+    renderRandomQuote();
     addToFavorites.classList.add("activ-bnt");
     addToFavorites.disabled = true;
   }

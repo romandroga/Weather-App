@@ -68,13 +68,13 @@ export function createCurrentWeatherObject(res) {
     name,
     sunrise,
     sunriseTime: {
-      hours: new Date(sunrise * 1000).getUTCHours(),
-      mins: new Date(sunrise * 1000).getUTCMinutes(),
+      hours: moment(sunrise * 1000).format("HH"),
+      mins: moment(sunrise * 1000).format("mm"),
     },
     sunset,
     sunsetTime: {
-      hours: new Date(sunset * 1000).getUTCHours(),
-      mins: new Date(sunset * 1000).getUTCMinutes(),
+      hours: moment(sunset * 1000).format("HH"),
+      mins: moment(sunset * 1000).format("mm"),
     },
     timezone,
   };
