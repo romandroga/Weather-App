@@ -11,11 +11,13 @@ export const inputForm = document.querySelector(".js-form");
 const handleInput = (e) => {
   e.preventDefault();
   const inputValue = toLowCaseCity(inputForm.elements.query.value);
-  OpenGalleryImg.searchQuery = inputValue;
   OpenWeather.query = inputValue;
   ready();
+  OpenWeather.fetchForecast().then((forecast) => {
+    OpenGalleryImg.searchQuery = inputValue;
+    axiosCityImg();
+  });
   renderCurrentWeather();
-  axiosCityImg();
   renderRandomQuote();
   inputForm.reset();
   const cities = JSON.parse(localStorage.getItem("cities"));
